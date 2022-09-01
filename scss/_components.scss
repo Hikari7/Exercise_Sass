@@ -1,22 +1,6 @@
 @use "base" as *;
 
-$main-font: "Nunito", sans-serif;
-$sub-font: "Josefin Sans", sans-serif;
-
-@mixin center {
-  align-items: center;
-  justify-content: center;
-}
-
 // logo
-.brand {
-  @include center();
-  margin: 56px auto;
-  display: flex;
-  width: 45%;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
 
 .logo {
   display: block;
@@ -24,46 +8,44 @@ $sub-font: "Josefin Sans", sans-serif;
 }
 
 .main-name {
-  font-size: 1.8rem;
+  // なんで大文字にならないの
+  @include textStyles(uppercase);
+  font-size: 3.6em;
   font-weight: 300;
+  font-family: $font-nunito;
+  margin-top: 16px;
 }
 
 .sub-name {
-  font-size: 1rem;
+  margin-top: 16px;
+  font-size: 1.6rem;
   font-weight: 300;
   text-transform: uppercase;
-  font-family: $sub-font;
+  font-family: $font-josefinSans;
 }
 
 .logo img {
-  height: 60px;
-  width: 60px;
+  height: 150px;
+  width: 150px;
 }
 
 // main-name
 
 .header-banner {
-  font-size: 1rem;
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   .main-heading {
-    font-family: "Dancing Script", cursive;
-    font-size: 3rem;
-    font-weight: 300;
+    @include centering(45%);
+    font-family: $font-dancingScript;
     color: $color-primary;
+    font-size: 7rem;
+    font-weight: 300;
     margin-bottom: 20px;
   }
 
   .sub-heading {
-    font-family: $sub-font;
-    font-size: 1.6rem;
+    @include centering(60%);
+    font-family: $font-josefinSans;
+    font-size: 3.5rem;
     font-weight: 300;
-    color: #bbb;
   }
 }
 
