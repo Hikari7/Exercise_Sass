@@ -86,7 +86,7 @@
     color: $color-white;
     font-size: 36px;
     background-color: rgba(211, 171, 85, 0.6);
-   
+
     flex-direction: column;
     transition: left 0.7s;
     //card-imgを基準にしてpositioningの設定
@@ -106,17 +106,20 @@
 }
 
 //footer
+footer {
+  position: relative;
+  height: 300px;
 
-.footer-header {
-  @include flexLayout;
-  @include textStyles(capitalize);
-  @include centering(230%);
+  .footer-header {
+    @include flexLayout;
+    @include textStyles(capitalize);
+    @include centering(70%);
+  }
 }
-
 .social-media {
   @include flexLayout;
   @include textStyles(capitalize);
-  @include centering(250%);
+  @include centering(130%);
 
   .fab {
     color: $color-secondary;
@@ -131,7 +134,7 @@
 }
 
 .footer-copyright {
-  @include centering(265%);
+  @include centering(160%);
   @include textStyles(capitalize);
   font-family: $font-josefinSans;
   font-size: 1.6rem;

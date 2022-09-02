@@ -161,7 +161,11 @@ html {
   left: 0;
 }
 
-.footer-header {
+footer {
+  position: relative;
+  height: 300px;
+}
+footer .footer-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,7 +173,7 @@ html {
   letter-spacing: 2px;
   text-transform: capitalize;
   position: absolute;
-  top: 230%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -182,7 +186,7 @@ html {
   letter-spacing: 2px;
   text-transform: capitalize;
   position: absolute;
-  top: 250%;
+  top: 130%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -199,7 +203,7 @@ html {
 
 .footer-copyright {
   position: absolute;
-  top: 265%;
+  top: 160%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 300;
