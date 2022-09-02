@@ -1,5 +1,7 @@
 @use "base" as *;
 
+//centeringのtopって画面一番上が基準値？
+
 // logo
 .logo {
   display: block;
@@ -15,52 +17,51 @@
 .main-name {
   @include textStyles(uppercase);
   font-size: 3.6em;
-  font-weight: 300;
   font-family: $font-nunito;
   margin-top: 16px;
 }
 
 // sub-name
 .sub-name {
-  margin-top: 16px;
+  @include textStyles(uppercase);
   font-size: 1.6rem;
-  font-weight: 300;
-  text-transform: uppercase;
   font-family: $font-josefinSans;
+  margin-top: 16px;
 }
 
 // main-heading
 .main-heading {
   @include centering(45%);
+  @include textStyles(capitalize);
   font-family: $font-dancingScript;
   color: $color-primary;
   font-size: 7rem;
-  font-weight: 300;
   margin-bottom: 20px;
 }
 
 // sub-heading
 .sub-heading {
   @include centering(60%);
+  @include textStyles(capitalize);
   font-family: $font-josefinSans;
   font-size: 3.5rem;
-  font-weight: 300;
 }
 
 // main-btn
 .card-overlay-btn {
-  width: 150px;
-  height: 40px;
-  color: #d3ab55;
-  background-color: #fff;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 14px;
+  @include textStyles(uppercase);
+  color: $color-primary;
+  background-color: $color-white;
+  font-family: $font-josefinSans;
   font-weight: bold;
+  font-size: 18px;
+  width: 200px;
+  height: 60px;
   text-transform: uppercase;
-  letter-spacing: 1px;
   border: 1px solid #d3ab55;
   border-radius: 30px;
   outline: none;
+  margin-top: 36px;
   cursor: pointer;
 }
 
@@ -72,29 +73,70 @@
   position: relative;
 
   .card-img {
+    @extend %fullSpace;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
     opacity: 0.5;
   }
 
   .card-overlay {
-    position: absolute;
-    top: 0;
-    left: -100%;
+    @include textStyles(capitalize);
+    @extend %fullSpace;
+    font-family: $font-nunito;
+    font-size: 36px;
+    color: $color-white;
     background-color: rgba(211, 171, 85, 0.6);
-    color: #fff;
-    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition: left 0.7s;
-    width: 100%;
-    height: 100%;
+    //card-imgを基準にしてpositioningの設定
+    position: absolute;
+    top: 0;
+    left: -100%; //隠してる
+    z-index: 10;
+
+    .card-overlay-heading {
+      @include textStyles(capitalize);
+    }
   }
 
-  &.card:hover .card-overlay {
+  &:hover .card-overlay {
     left: 0;
   }
+}
+
+//footer
+
+.footer-header {
+  display: flex;
+  @include textStyles(capitalize);
+  @include centering(230%);
+}
+
+.social-media {
+  display: flex;
+  @include textStyles(capitalize);
+  @include centering(250%);
+
+  .fab {
+    color: $color-secondary;
+    text-decoration: none;
+    font-size: 60px;
+    transition: color 0.7s;
+    width: 100px;
+    justify-content: space-between;
+    text-align: center;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.footer-copyright {
+  @include centering(265%);
+  @include textStyles(capitalize);
+  font-family: $font-josefinSans;
+  font-size: 1.6rem;
+  padding: 120px;
 }

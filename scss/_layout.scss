@@ -13,11 +13,14 @@ html {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url("https://images.unsplash.com/photo-1479044769763-c28e05b5baa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
   background-position: center;
+
+  .brand {
+    @include centering(20%);
+  }
 }
 
 .brand {
   display: flex;
-  @include centering(20%);
   @include textStyles(capitalize);
 }
 
@@ -29,3 +32,11 @@ html {
   width: 100%;
 }
 // footer
+
+.footer {
+  color: $color-secondary;
+
+  li {
+    list-style: none;
+  }
+}
