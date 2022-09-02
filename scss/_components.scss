@@ -80,14 +80,13 @@
 
   .card-overlay {
     @include textStyles(capitalize);
+    @include flexLayout;
     @extend %fullSpace;
     font-family: $font-nunito;
-    font-size: 36px;
     color: $color-white;
+    font-size: 36px;
     background-color: rgba(211, 171, 85, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
     flex-direction: column;
     transition: left 0.7s;
     //card-imgを基準にしてpositioningの設定
@@ -109,13 +108,13 @@
 //footer
 
 .footer-header {
-  display: flex;
+  @include flexLayout;
   @include textStyles(capitalize);
   @include centering(230%);
 }
 
 .social-media {
-  display: flex;
+  @include flexLayout;
   @include textStyles(capitalize);
   @include centering(250%);
 
@@ -125,8 +124,6 @@
     font-size: 60px;
     transition: color 0.7s;
     width: 100px;
-    justify-content: space-between;
-    text-align: center;
     &:hover {
       color: $color-primary;
     }

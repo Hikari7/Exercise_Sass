@@ -138,13 +138,13 @@ html {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: capitalize;
-  font-family: "Nunito", sans-serif;
-  font-size: 36px;
-  color: #fff;
-  background-color: rgba(211, 171, 85, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+  font-size: 36px;
+  background-color: rgba(211, 171, 85, 0.6);
   flex-direction: column;
   transition: left 0.7s;
   position: absolute;
@@ -163,6 +163,8 @@ html {
 
 .footer-header {
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: capitalize;
@@ -174,6 +176,8 @@ html {
 
 .social-media {
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: capitalize;
@@ -188,8 +192,6 @@ html {
   font-size: 60px;
   transition: color 0.7s;
   width: 100px;
-  justify-content: space-between;
-  text-align: center;
 }
 .social-media .fab:hover {
   color: #d3ab55;
